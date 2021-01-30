@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curise Booking</title>
+
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
@@ -61,7 +67,8 @@
                     <input id="firstClass-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span id="firstClass-PlusBtn">+</span> <span id="firstClass-minusBtn">-</span> </p>
+                    <button id="firstClass-plusBtn" class="btn btn-default">&#43;</button>
+                    <button id="firstClass-minusBtn" class="btn btn-default">&#8722;</button>
                 </div>
             </div>
             
@@ -71,7 +78,8 @@
                     <input id="economyClass-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span id="economyClass-plusBtn">+</span> <span id="economyClass-minusBtn">-</span> </p>
+                    <button id="economyClass-plusBtn" class="btn btn-default">&#43;</button>
+                    <button id="economyClass-minusBtn" class="btn btn-default">&#8722;</button>
                 </div>
             </div>
             <div class="calculations">
@@ -109,7 +117,7 @@
     <!--Thank You-->
     <script>
         //Plus Button Handle
-        const firstClassPlusBtn = document.getElementById("firstClass-PlusBtn");
+        const firstClassPlusBtn = document.getElementById("firstClass-plusBtn");
         firstClassPlusBtn.addEventListener("click", function(){
             plusBtnHandle("firstClass-count", "firstClass-cost");
             amountCalculate();

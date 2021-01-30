@@ -18,11 +18,11 @@ nav{
     width: 100%;
     padding: 20px 0;
 }
-.container{
+/* .container{
     width: 1200px;
     max-width: 85%;
     margin: 0 auto;
-}
+} */
 nav ul{
     display: flex;
     justify-content: flex-start;
@@ -32,11 +32,13 @@ nav ul li a{
     color: #fff;
     padding: 10px;
     text-transform: uppercase;
+    text-decoration: none;
     margin-left: 30px;
 }
 nav ul li a:hover, a.active{
     background-color: #E33741;
     border-radius: 5px;
+    color: black;
 }
 .main-content{
     display: grid;
@@ -60,7 +62,7 @@ nav ul li a:hover, a.active{
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     float: right;
     width: 65%;
     margin-left: 180px;
@@ -97,7 +99,7 @@ nav ul li a:hover, a.active{
     min-width: 300px;
 }
 .plus-minus-btn{
-    margin: 15px 5px 0px 0px;
+    margin: 18px 5px 0px 0px;
 }
 .booking-form .inputs{
     display: grid;

@@ -1,2 +1,2 @@
 # vashao
-[Visit Link](https://github.com/wickedaf/vashao)
+[Visit Link](https://wickedaf.github.io/vashao)

@@ -31,7 +31,7 @@
 
         <div class="booking-content">
             <h1>Cruise Queen</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book./p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
 
 
@@ -57,21 +57,21 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <label for="">First Class ($<span id="firstClass-cost">150</span>)</label>
+                    <input id="firstClass-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p>+ -</p>
+                    <p> <span id="firstClass-PlusBtn">+</span> <span id="firstClass-minusBtn">-</span> </p>
                 </div>
             </div>
             
             <div class="input-group f-class">
                 <div>
-                    <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <label for="">Economy ($<span id="economyClass-cost">100</span>)</label>
+                    <input id="economyClass-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                    <p> <span id="economyClass-plusBtn">+</span> <span id="economyClass-minusBtn">-</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -80,7 +80,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p>$<span id="subtotal-amount">000</span> </p>
                     </div>
                 </div>
 
@@ -89,7 +89,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p>$<span id="tax-amount">000</span></p>
                     </div>
                 </div>
                 <hr>
@@ -98,15 +98,90 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p>$<span id="total-amount">000</span></p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="bookNow-btn" class="btn-style">Book Now</button>
         </div>
     </main>
 
     <!--Thank You-->
+    <script>
+        //Plus Button Handle
+        const firstClassPlusBtn = document.getElementById("firstClass-PlusBtn");
+        firstClassPlusBtn.addEventListener("click", function(){
+            plusBtnHandle("firstClass-count", "firstClass-cost");
+            amountCalculate();
+
+        });
+       
+        const economyClassPlusBtn = document.getElementById("economyClass-plusBtn");
+        economyClassPlusBtn.addEventListener("click", function(){
+            plusBtnHandle("economyClass-count", "economyClass-cost");
+            amountCalculate();
+        });
+
+        //Minus Button Handle
+        const firstClassMinusBtn = document.getElementById("firstClass-minusBtn");
+        firstClassMinusBtn.addEventListener("click", function(){
+            minusBtnHandle("firstClass-count", "firstClass-cost");
+            amountCalculate();
+        });
+        const economyClassMinusBtn = document.getElementById("economyClass-minusBtn");
+        economyClassMinusBtn.addEventListener("click", function(){
+           minusBtnHandle("economyClass-count", "economyClass-cost");
+           amountCalculate();
+        });
+
+        const bookNowBtn = document.getElementById("bookNow-btn");
+        bookNowBtn.addEventListener("click", function(){
+            let firstClassCount = parseFloat(document.getElementById("firstClass-count").value);
+            let economyCount = parseFloat(document.getElementById("economyClass-count").value);
+            let totalAmount = parseFloat(document.getElementById("total-amount").innerText);
+            let totalTicketCount = firstClassCount + economyCount;
+            alert("You have added " + totalTicketCount + " Ticket" + " And Your Total Amount is " + totalAmount);
+        });
+
+        //Function for Handling Plus Btn
+        function plusBtnHandle(ticketCountId, ticketPriceId){
+            let ticketCount = parseFloat(document.getElementById(ticketCountId).value);
+            ticketCount++;
+            document.getElementById(ticketCountId).value = ticketCount;
+            let ticketCost = parseFloat(document.getElementById(ticketPriceId).innerText);
+            let ticketTotal = ticketCost * ticketCount;
+            return ticketTotal;
+        }
+
+        //Function for Handling Minus Btn
+        function minusBtnHandle(ticketCountId, ticketPriceId){
+            let ticketCount = parseFloat(document.getElementById(ticketCountId).value);
+            if(ticketCount>0){
+            ticketCount--;
+            }else{
+                alert("There's no ticket in your cart");
+            }
+            document.getElementById(ticketCountId).value = ticketCount;
+            let ticketCost = parseFloat(document.getElementById(ticketPriceId).innerText);
+            let ticketTotal = ticketCost * ticketCount;
+            return ticketTotal;
+        }
+    
+        //Function for Calculating Subtotal, Tax & Grandtotal
+        function amountCalculate(){
+            let firstClassCount = parseFloat(document.getElementById("firstClass-count").value);
+            let economyCount = parseFloat(document.getElementById("economyClass-count").value);
+            let subtotalAmount = (firstClassCount*150) + (economyCount*100);
+            document.getElementById("subtotal-amount").innerText = subtotalAmount;
+            let taxAmount = subtotalAmount * 0.1;
+            document.getElementById("tax-amount").innerText = taxAmount;
+            document.getElementById("total-amount").innerText = taxAmount + subtotalAmount;
+
+
+        }
+
+        
+    </script>
 </body>
 
 </html>

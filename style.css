@@ -43,20 +43,23 @@ nav ul li a:hover, a.active{
 .main-content{
     display: grid;
     grid-template-columns: 2fr 3fr;
-    gap: 70px;
+    gap: 2em;
     align-items: center;
 }
 .booking-content{
     color: #fff;
     width: 100%;
     float: left;
-    margin-left: 50px;
+    margin-left: 1em;
 }
 .booking-content h1{
     font-size: 70px;
     text-transform: uppercase;
     font-family: 'Bebas Neue', cursive;
     font-weight: 500;
+}
+.inp-style {
+    border-radius: 50%;
 }
 .booking-form{
     background-color: #fff;
@@ -66,12 +69,14 @@ nav ul li a:hover, a.active{
     float: right;
     width: 65%;
     margin-left: 180px;
+    overflow: hidden;
 }
 .booking-form h3{
     margin: 10px 0px;
 }
 .booking-form  .input-group{
     margin: 10px 0;
+    border-radius: 15px;
 }
 .booking-form  .calculations{
     margin: 10px 0;
@@ -84,10 +89,9 @@ nav ul li a:hover, a.active{
     width: 100%;
     display: block;
     padding: 10px;
-    border-radius: 5px;
     border: none;
     background: #F3F5FF;
-    border-radius: 4px;
+    border-radius: 15px;
     margin: 10px 0;
 }
 .f-class{
@@ -124,4 +128,41 @@ nav ul li a:hover, a.active{
     font-size: 1.5em;
     color: black;
     background-color:  #E33741;
+    border-radius: 10px;
+    margin: 0 5px;
 }
+
+@media only screen and (max-width: 800px) {
+    nav ul{
+        display: flex;
+        padding: 0px;
+        margin: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul li a{
+        padding: 5px;
+        margin: 8px;
+    }
+    .booking-form{
+        position: relative;
+        width: 100%;
+        z-index: 3;
+        bottom: 0px;
+        margin: 0px;
+        overflow: hidden;
+    }
+    .main-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vh;
+        column-gap: 0px;
+        justify-items: center;
+    }
+    .booking-content{
+        margin: 0 auto;
+    }
+    .booking-content h1{
+        text-align: center;
+    }
+  }

@@ -5,6 +5,9 @@
     text-decoration: none;
     list-style-type: none;
 }
+a{
+    text-decoration: none;
+}
 body{
     font-family: 'Roboto', sans-serif;
     background:url("images/ship.jpg");
@@ -36,7 +39,7 @@ nav ul li a{
     margin-left: 30px;
 }
 nav ul li a:hover, a.active{
-    background-color: #E33741;
+    background-color: #dc3545;
     border-radius: 5px;
     color: black;
 }
@@ -118,7 +121,7 @@ nav ul li a:hover, a.active{
     border: none;
     color: #fff;
     font-weight: 500;
-    background-color:  #E33741;
+    background-color:  #dc3545;
 }
 .amount{
     display: flex;
@@ -127,7 +130,7 @@ nav ul li a:hover, a.active{
 #firstClass-plusBtn, #firstClass-minusBtn, #economyClass-minusBtn, #economyClass-plusBtn{
     font-size: 1.5em;
     color: black;
-    background-color:  #E33741;
+    background-color:  #dc3545;
     border-radius: 10px;
     margin: 0 5px;
 }
@@ -165,4 +168,9 @@ nav ul li a:hover, a.active{
     .booking-content h1{
         text-align: center;
     }
+  }
+
+  footer p, footer a {
+      color: rgb(255, 255, 255);
+      font-weight: 500;
   }

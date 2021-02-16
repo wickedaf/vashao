@@ -9,6 +9,11 @@ a{
     text-decoration: none;
 }
 
+a:hover{
+    color: black;
+    font-weight: 700;
+}
+
 body::before {
     content:'';
     background:rgba(0, 0, 0, 0.579);
@@ -150,11 +155,12 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 #firstClass-plusBtn, #firstClass-minusBtn, #economyClass-minusBtn, #economyClass-plusBtn{
-    font-size: 1.5em;
-    color: black;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
     background-color:  #dc3545;
     border-radius: 10px;
-    margin: 0 5px;
+    margin: 0 5px; 
 }
 
 @media only screen and (max-width: 800px) {
